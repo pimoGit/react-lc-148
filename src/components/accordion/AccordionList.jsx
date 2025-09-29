@@ -45,7 +45,7 @@ export default function AccordionList() {
                     titolo={faq.title}
                     contenuto={faq.content}
                     isOpen={activeAccordionItem === faq.id}
-                    onToggle={() => setActiveAccordionItem(faq.id)}
+                    onToggle={() => setActiveAccordionItem(activeAccordionItem === faq.id ? null : faq.id)}
                     key={faq.id}
                 />
             ))}
