@@ -6,8 +6,10 @@ export default function Counter() {
     const [count, setCount] = useState(0);
 
     const hadleIncrement = () => {
-        setCount(current => current + 1)
-        setCount(current => current + 1)
+        setCount((countCurrent) => {
+            return countCurrent + 1
+        })
+        setCount(countCurrent => countCurrent + 1)
     };
 
 
