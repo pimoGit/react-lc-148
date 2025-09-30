@@ -19,6 +19,13 @@ function TodoList() {
         setNewTask('');
     }
 
+    const removeTask = i => {
+        const updatedTasks = tasks.filter((task, taskIndex) => {
+            return taskIndex !== i
+        });
+        setTasks(updatedTasks);
+    }
+
     return (
         <>
             <form onSubmit={addTask}>
@@ -32,10 +39,13 @@ function TodoList() {
 
             {/* //lista dei task */}
             <ul>
-                {tasks.map((task, i) => (
+                {tasks.map((task, index) => (
                     <li
                         key={i}>
                         {task}
+                        <button onClick={() => removeTask(index)}>
+                            Elimina
+                        </button>
                     </li>
                 ))}
             </ul>
