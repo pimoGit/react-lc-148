@@ -41,7 +41,7 @@ function TodoList() {
             <ul>
                 {tasks.map((task, index) => (
                     <li
-                        key={i}>
+                        key={index}>
                         {task}
                         <button onClick={() => removeTask(index)}>
                             Elimina
