@@ -10,8 +10,13 @@ function TodoList() {
     const addTask = e => {
         e.preventDefault();
         // tasks.push(newTask);
-        const updatedTasks = [...tasks, newTask];
+        // pulisco l'input user
+        const cleanTask = newTask.trim();
+        // creo nuovo array per lo state
+        const updatedTasks = [...tasks, cleanTask];
         setTasks(updatedTasks);
+        // ripuliamo campo user [da var di stato]
+        setNewTask('');
     }
 
     return (
