@@ -4,8 +4,14 @@ function TodoList() {
 
     const initialTodo = ['Fare la spesa', 'rifare il letto', 'fare eseritazione'];
 
+    // stato dell'array completo
     const [tasks, setTasks] = useState(initialTodo);
+    // stato del input di inserimento nuovo task
     const [newTask, setNewTask] = useState('');
+    // stato del array filtrato
+    const [filteredTasks, setFilteredTasks] = useState(tasks);
+    // stato del campo di ricerca
+    const [search, setSearch] = useState("");
 
     const addTask = e => {
         e.preventDefault();
@@ -28,8 +34,13 @@ function TodoList() {
 
     // utilizzo useEffect per gestione filtro
     useEffect(() => {
-        console.log("Esecuzione di useEffetc  -  all'avvio e inserimento nuovo task")
-    }, [tasks]);
+        // console.log("Esecuzione di useEffetc  -  all'avvio e cambiamento di var di ricerca")
+        setFilteredTasks(
+            tasks.filter(task => {
+                return task.toLowerCase().includes(search.toLowerCase())
+            })
+        );
+    }, [search, tasks]);
 
     return (
         <>
@@ -44,7 +55,7 @@ function TodoList() {
 
             {/* //lista dei task */}
             <ul>
-                {tasks.map((task, index) => (
+                {filteredTasks.map((task, index) => (
                     <li
                         key={index}>
                         {task}
@@ -54,6 +65,12 @@ function TodoList() {
                     </li>
                 ))}
             </ul>
+
+            <input type="text"
+                placeholder='Cerca'
+                value={search}
+                onChange={(e) => { setSearch(e.target.value) }}
+            />
         </>
     )
 
