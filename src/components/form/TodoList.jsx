@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function TodoList() {
 
@@ -25,6 +25,11 @@ function TodoList() {
         });
         setTasks(updatedTasks);
     }
+
+    // utilizzo useEffect per gestione filtro
+    useEffect(() => {
+        console.log("Esecuzione di useEffetc  -  all'avvio e inserimento nuovo task")
+    }, [tasks]);
 
     return (
         <>
