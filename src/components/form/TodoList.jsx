@@ -9,7 +9,7 @@ function TodoList() {
     // stato del input di inserimento nuovo task
     const [newTask, setNewTask] = useState('');
     // stato del array filtrato
-    const [filteredTasks, setFilteredTasks] = useState(tasks);
+    const [filteredTasks, setFilteredTasks] = useState([]);
     // stato del campo di ricerca
     const [search, setSearch] = useState("");
 
@@ -37,7 +37,7 @@ function TodoList() {
         // console.log("Esecuzione di useEffetc  -  all'avvio e cambiamento di var di ricerca")
         setFilteredTasks(
             tasks.filter(task => {
-                return task.toLowerCase().includes(search.toLowerCase())
+                return task.toLowerCase().includes(search.toLowerCase().trim())
             })
         );
     }, [search, tasks]);
