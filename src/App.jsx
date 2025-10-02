@@ -3,7 +3,7 @@ import Counter from './components/Counter'
 import AccordionList from './components/accordion/AccordionList'
 import Binding from './components/form/Binding'
 import TodoList from './components/form/TodoList'
-
+import CharactersList from './components/rickmorty/CharactersList'
 function App() {
 
     return (
@@ -12,7 +12,8 @@ function App() {
             {/* <Counter />
             <AccordionList /> 
             <Binding />*/}
-            <TodoList />
+            {/* <TodoList /> */}
+            <CharactersList />
         </>
     )
 }
