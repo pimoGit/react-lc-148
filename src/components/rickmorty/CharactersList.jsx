@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import axios from "axios";
 
 export default function CharactersList() {
@@ -10,10 +10,16 @@ export default function CharactersList() {
             .catch(error => console.log(error)
             )
     }
+    // chiamata che genera un loop infinito e fa esplodere il browser
+    // fetchCharacters();
+
+    useEffect(() => {
+        fetchCharacters()
+    }
+        , [])
 
     return (
         <div>
-            <button onClick={fetchCharacters}>Carica Todos</button>
             <ul>
                 {characters.map((character) => (
                     <li key={character.id}>{character.name}</li>
