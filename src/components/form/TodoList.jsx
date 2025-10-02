@@ -32,6 +32,8 @@ function TodoList() {
         setTasks(updatedTasks);
     }
 
+
+
     // utilizzo useEffect per gestione filtro
     useEffect(() => {
         // console.log("Esecuzione di useEffetc  -  all'avvio e cambiamento di var di ricerca")
