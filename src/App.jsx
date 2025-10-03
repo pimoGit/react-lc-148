@@ -5,6 +5,7 @@ import Binding from './components/form/Binding'
 import TodoList from './components/form/TodoList'
 import CharactersList from './components/rickmorty/CharactersList'
 import BusinessCard from './components/form/BusinessCard'
+import TicketForm from './components/form/TicketForm'
 function App() {
 
     return (
@@ -15,7 +16,8 @@ function App() {
             <Binding />*/}
             {/* <TodoList /> */}
             {/* <CharactersList /> */}
-            <BusinessCard />
+            {/* <BusinessCard /> */}
+            <TicketForm />
         </>
     )
 }
