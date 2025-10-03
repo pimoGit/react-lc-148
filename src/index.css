@@ -20,11 +20,11 @@
 /*------------------
       GENERAL
 -------------------*/
-.container {
+/* .container {
     max-width: 30rem;
     margin: auto;
     padding: 1.25rem 0;
-}
+} */
 
 /*-----------
   TYPO
@@ -85,6 +85,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    min-width: 1300px;
 }
 
 .character {

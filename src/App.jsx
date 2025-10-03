@@ -4,6 +4,7 @@ import AccordionList from './components/accordion/AccordionList'
 import Binding from './components/form/Binding'
 import TodoList from './components/form/TodoList'
 import CharactersList from './components/rickmorty/CharactersList'
+import BusinessCard from './components/form/BusinessCard'
 function App() {
 
     return (
@@ -13,7 +14,8 @@ function App() {
             <AccordionList /> 
             <Binding />*/}
             {/* <TodoList /> */}
-            <CharactersList />
+            {/* <CharactersList /> */}
+            <BusinessCard />
         </>
     )
 }
