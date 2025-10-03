@@ -23,10 +23,20 @@ const TicketForm = () => {
         }
     };
 
+    // funzione di invio del form
+    function handleSubmit(e) {
+        e.preventDefault();
+        axios.post("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/tickets", formData)
+            .then(res => console.log("dati inviati", res.data))
+            .catch(error => console.log(error))
+    }
+
     return (
         <div className="container mt-4">
             <h2>Richiesta apertura Ticket</h2>
-            <form className="p-4 border rounded bg-light">
+            <form
+                onSubmit={handleSubmit}
+                className="p-4 border rounded bg-light">
                 {/* Nome */}
                 <div className="mb-3">
                     <label className="form-label">Nome</label>
