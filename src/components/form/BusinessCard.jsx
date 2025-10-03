@@ -22,6 +22,16 @@ const BusinessCard = () => {
         companyPic: ""
     });
 
+    // funzione centralizzata di gestione dei campi del form
+    // ...
+
+    function handleFormData(e) {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    }
+
     return (
         <div className="container mt-3">
             <div className="row">
@@ -35,7 +45,7 @@ const BusinessCard = () => {
                                     placeholder="Nome"
                                     type="text"
                                     value={formData.firstName}
-                                    onChange={(e) => setFirstName(e.target.value)}
+                                    onChange={handleFormData}
                                     name="firstName"
                                 />
                             </div>
@@ -45,7 +55,7 @@ const BusinessCard = () => {
                                     placeholder="Cognome"
                                     type="text"
                                     value={formData.lastName}
-                                    onChange={(e) => setLastName(e.target.value)}
+                                    onChange={handleFormData}
                                     name="lastName"
                                 />
                             </div>
@@ -55,7 +65,7 @@ const BusinessCard = () => {
                                     placeholder="Azienda"
                                     type="text"
                                     value={formData.companyName}
-                                    onChange={(e) => setCompanyName(e.target.value)}
+                                    onChange={handleFormData}
                                     name="companyName"
                                 />
                             </div>
@@ -65,7 +75,7 @@ const BusinessCard = () => {
                                     placeholder="Ruolo"
                                     type="text"
                                     value={formData.role}
-                                    onChange={(e) => setRole(e.target.value)}
+                                    onChange={handleFormData}
                                     name="role"
                                 />
                             </div>
@@ -75,7 +85,7 @@ const BusinessCard = () => {
                                     placeholder="Email"
                                     type="email"
                                     value={formData.email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={handleFormData}
                                     name="email"
                                 />
                             </div>
@@ -85,7 +95,7 @@ const BusinessCard = () => {
                                     placeholder="Telefono"
                                     type="tel"
                                     value={formData.phone}
-                                    onChange={(e) => setPhone(e.target.value)}
+                                    onChange={handleFormData}
                                     name="phone"
                                 />
                             </div>
@@ -95,7 +105,7 @@ const BusinessCard = () => {
                             placeholder="Logo Azienda"
                             type="url"
                             value={formData.companyPic}
-                            onChange={(e) => setCompanyPic(e.target.value)}
+                            onChange={handleFormData}
                             name="companyPic"
                         />
                     </form>
