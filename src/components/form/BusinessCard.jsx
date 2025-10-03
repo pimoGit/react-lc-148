@@ -26,10 +26,9 @@ const BusinessCard = () => {
     // ...
 
     function handleFormData(e) {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+
+        const { name, value } = e.target;
+        setFormData((currentFormData) => ({ ...currentFormData, [name]: value }));
     }
 
     return (
