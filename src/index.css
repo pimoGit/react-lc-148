@@ -1,0 +1,12 @@
+header li {
+    padding: 0 10px;
+    display: inline-block;
+}
+
+header li a {
+    color: chartreuse;
+}
+
+header li a.active {
+    color: darkorange;
+}

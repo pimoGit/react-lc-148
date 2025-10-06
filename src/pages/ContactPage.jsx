@@ -1,6 +1,14 @@
+// imnport della navbar
+import MainNavBar from "../components/MainNavBar"
+
 const ContactPage = () => {
     return (
-        <div>Questa è la Contact Page</div>
+        <>
+            <header>
+                <MainNavBar />
+            </header>
+            <div>Questa è la Contact Page</div>
+        </>
     )
 }
 
