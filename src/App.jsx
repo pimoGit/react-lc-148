@@ -11,6 +11,7 @@ import DefaultLayout from './layouts/DefaultLayout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import CharachtersPage from './pages/CharachtersPage';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactPage />} />
+                    <Route path="/charachters" element={<CharachtersPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>
