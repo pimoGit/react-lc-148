@@ -1,24 +1,23 @@
 import './App.css'
-import Counter from './components/Counter'
-import AccordionList from './components/accordion/AccordionList'
-import Binding from './components/form/Binding'
-import TodoList from './components/form/TodoList'
-import CharactersList from './components/rickmorty/CharactersList'
-import BusinessCard from './components/form/BusinessCard'
-import TicketForm from './components/form/TicketForm'
+
+// import della libreria di routing
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// importiamo le pagine di riferimento
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+
 function App() {
 
     return (
-        <>
-            <h1>Ciao Sono il tuo nuovo progetto di LC</h1>
-            {/* <Counter />
-            <AccordionList /> 
-            <Binding />*/}
-            {/* <TodoList /> */}
-            {/* <CharactersList /> */}
-            {/* <BusinessCard /> */}
-            <TicketForm />
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contacts" element={<ContactPage />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
