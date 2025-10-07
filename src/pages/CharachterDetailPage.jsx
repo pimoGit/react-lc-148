@@ -3,13 +3,16 @@ import { useState, useEffect } from "react";
 // import di comp LInk da libreria router
 import { Link } from "react-router-dom";
 // import dell'hook per il parametro
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 
 
 const CharachterDetailPage = () => {
     // recuperiamo il parametro dinamico (id)
     const { id } = useParams();
+    // utilizzo il navigate
+    const navigate = useNavigate();
+
 
     // stato del componente (oggetto del personaggio da API)
     const [character, setCharacter] = useState();
@@ -18,9 +21,8 @@ const CharachterDetailPage = () => {
     useEffect(() => {
         axios.get(`https://rickandmortyapi.com/api/character/${id}`)
             .then(res => setCharacter(res.data))
-            .catch(err => console.log(err)
-            )
-    }, [])
+            .catch(() => { navigate('/charachters') })
+    }, [id])
 
     return (
         <div>

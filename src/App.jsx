@@ -13,6 +13,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CharachtersPage from './pages/CharachtersPage';
 import CharachterDetailPage from './pages/CharachterDetailPage';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                         <Route path="" element={<CharachtersPage />} />
                         <Route path=":id" element={<CharachterDetailPage />} />
                     </Route>
+                    <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
         </BrowserRouter>
