@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CharachtersPage from './pages/CharachtersPage';
+import CharachterDetailPage from './pages/CharachterDetailPage';
 
 function App() {
 
@@ -23,8 +24,8 @@ function App() {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactPage />} />
                     <Route path="/charachters">
-                        <Route index element={<CharachtersPage />} />
-                        {/* <Route path="/:id" element={<CharachterDetailPage />} /> */}
+                        <Route path="" element={<CharachtersPage />} />
+                        <Route path=":id" element={<CharachterDetailPage />} />
                     </Route>
                 </Route>
             </Routes>

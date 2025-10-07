@@ -10,3 +10,7 @@ header li a {
 header li a.active {
     color: darkorange;
 }
+
+.character {
+    margin-bottom: 70px;
+}

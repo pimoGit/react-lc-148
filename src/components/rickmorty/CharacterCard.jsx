@@ -1,3 +1,6 @@
+// import di comp LInk da libreria router
+import { Link } from "react-router-dom";
+
 export default function CharacterCard(props) {
 
     const { character } = props;
@@ -13,6 +16,9 @@ export default function CharacterCard(props) {
                     <span className={`status-icon is-${character.status.toLowerCase()}`}></span>
                     {character.status} - {character.origin.name}
                 </p>
+                <Link to={`/charachters/${character.id}`}>
+                    Dettaglio personaggio
+                </Link>
             </div>
         </div>
     )
