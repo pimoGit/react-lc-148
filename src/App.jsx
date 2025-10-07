@@ -22,7 +22,10 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactPage />} />
-                    <Route path="/charachters" element={<CharachtersPage />} />
+                    <Route path="/charachters">
+                        <Route index element={<CharachtersPage />} />
+                        {/* <Route path="/:id" element={<CharachterDetailPage />} /> */}
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
