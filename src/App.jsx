@@ -1,5 +1,8 @@
 import './App.css'
 
+// import provider contesto preferiti
+import { FavoriteProvider } from './contexts/FavoriteContext';
+
 // import della libreria di routing
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -18,20 +21,22 @@ import NotFound from './pages/NotFound';
 function App() {
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={<DefaultLayout />}>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/contacts" element={<ContactPage />} />
-                    <Route path="/charachters">
-                        <Route index element={<CharachtersPage />} />
-                        <Route path=":id" element={<CharachterDetailPage />} />
+        <FavoriteProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<DefaultLayout />}>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/about" element={<AboutPage />} />
+                        <Route path="/contacts" element={<ContactPage />} />
+                        <Route path="/charachters">
+                            <Route index element={<CharachtersPage />} />
+                            <Route path=":id" element={<CharachterDetailPage />} />
+                        </Route>
+                        <Route path="*" element={<NotFound />} />
                     </Route>
-                    <Route path="*" element={<NotFound />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+                </Routes>
+            </BrowserRouter>
+        </FavoriteProvider>
     )
 }
 
