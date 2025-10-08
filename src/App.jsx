@@ -25,7 +25,7 @@ function App() {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/contacts" element={<ContactPage />} />
                     <Route path="/charachters">
-                        <Route path="" element={<CharachtersPage />} />
+                        <Route index element={<CharachtersPage />} />
                         <Route path=":id" element={<CharachterDetailPage />} />
                     </Route>
                     <Route path="*" element={<NotFound />} />
