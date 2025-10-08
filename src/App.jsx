@@ -1,7 +1,7 @@
 import './App.css'
 
 // import provider contesto preferiti
-import { FavoriteProvider } from './contexts/FavoriteContext';
+import { FavoriteProvider } from './context/FavoriteContext';
 
 // import della libreria di routing
 import { BrowserRouter, Routes, Route } from "react-router-dom";
