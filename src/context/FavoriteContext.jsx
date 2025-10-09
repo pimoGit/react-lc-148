@@ -2,6 +2,9 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const FavoriteContext = createContext();
 
+// richiamo variabile di ambiente
+const apiUrl = import.meta.env.VITE_API_URL;
+
 // comp di creazione provider
 const FavoriteProvider = ({ children }) => {
 
@@ -24,7 +27,7 @@ const FavoriteProvider = ({ children }) => {
     const [characters, setCharacters] = useState([]);
 
     function fetchCharacters() {
-        axios.get("https://rickandmortyapi.com/api/character")
+        axios.get(apiUrl)
             .then((res) => setCharacters(res.data.results))
             .catch(error => console.log(error)
             )
